@@ -20,7 +20,7 @@ const cards = [
     link: "https://google.com",
   },
   {
-    index: 2,
+    index: 0,
     titleTop: "Pay-per-click",
     titleBottom: "advertising",
     img: c2,
@@ -28,7 +28,7 @@ const cards = [
     link: "https://google.com",
   },
   {
-    index: 3,
+    index: 0,
     titleTop: "Social Media",
     titleBottom: "Marketing",
     img: c3,
@@ -44,7 +44,7 @@ const cards = [
     link: "https://google.com",
   },
   {
-    index: 2,
+    index: 1,
     titleTop: "Content",
     titleBottom: "Creation",
     img: c5,
@@ -52,7 +52,7 @@ const cards = [
     link: "https://google.com",
   },
   {
-    index: 3,
+    index: 0,
     titleTop: "Analytics and",
     titleBottom: "Tracking",
     img: c6,
@@ -61,13 +61,12 @@ const cards = [
   },
 ];
 
-const description =
-  "At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include";
+const description ="";
 ---
 
 <Section>
   <div class="mt-[140px] mb-5">
-    <SectionTitle sectionTitle="Services" description={description} />
+    <SectionTitle sectionTitle="Ofrecemos Los Siguientes Servicios" description={description} />
     <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
       {
         cards.map((card) => (

@@ -4,20 +4,15 @@
 
 @layer base {
   @font-face {
-    font-family: "Grotesk";
-    src: url("/fonts/grotesk/SpaceGrotesk-Regular.woff"), format("woff");
-    font-weight: normal;
+    font-family: "Giga Sand";
+    src: url("/fonts/GigaSand-Bold.woff") format("woff");
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
   }
+  
 
-  @font-face {
-    font-family: "Grotesk";
-    src: url("/fonts/grotesk/SpaceGrotesk-Medium.woff"), format("woff");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-  }
+
 
   :root {
     --green: #b9ff66;
@@ -29,16 +24,19 @@
   @layer base {
     * {
       box-sizing: border-box;
-      font-family: "Grotesk", sans-serif;
+      font-family: "Giga Sand", sans-serif; /* Cambiado a Giga Sand */
       scroll-behavior: smooth;
     }
+    
 
     body {
       font-size: 20px;
+      background: rgb(255,255,255);
+      background: radial-gradient(circle, rgba(255,255,255,1) 70%, rgba(178,178,178,0.3226540616246498) 100%);
     }
 
     p {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
 
     h1 {
@@ -91,10 +89,10 @@
 
   @layer components {
     .btn-primary {
-      @apply bg-dark text-white rounded-lg px-[35px] py-5 transition-all duration-200;
+      @apply bg-[#FF8415] text-white rounded-lg px-[35px] py-5 transition-all duration-200;
     }
     .btn-primary:hover {
-      @apply bg-green text-black transform scale-105;
+      @apply bg-[#F9B200] text-black transform scale-105;
     }
 
     .btn-secondary {

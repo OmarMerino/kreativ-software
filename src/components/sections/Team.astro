@@ -4,74 +4,36 @@ import TeamCard from "../ui/TeamCard.astro";
 import Section from "./Section.astro";
 
 const description =
-  "Meet the skilled and experienced team behind our successful digital marketing strategies";
+  "";
 
-import {
-  default as p1,
-  default as p2,
-  default as p3,
-  default as p4,
-  default as p5,
-  default as p6,
-} from "../../assets/pics/profile-pic.png";
+
+import p1 from "../../assets/pics/Marta-Gaete_2022.png"
+import p2 from "../../assets/pics/DON-ENRIQUE.jpg"
 
 const team = [
   {
-    pic: p1,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
     pic: p2,
-    name: "Maria Katz",
-    role: "CEO",
+    name: "Enrique Sepúlveda Bornand",
+    role: "Ingeniero Civil Estructural UBB, Gerente de Proyectos",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+      "Lidera nuestros proyectos con visión y precisión, garantizando el éxito en cada etapa.",
     link: "https://linkedin.com",
   },
   {
-    pic: p3,
-    name: "Maria Katz",
-    role: "CEO",
+    pic: p1,
+    name: "Marta Gaete Orellana",
+    role: "Directora de Gestión",
     description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+    "Líder estratégica y enfocada en resultados, nuestra Directora impulsa el éxito de cada iniciativa." ,
     link: "https://linkedin.com",
-  },
-  {
-    pic: p4,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
-    pic: p5,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
-    link: "https://linkedin.com",
-  },
-  {
-    pic: p6,
-    name: "Maria Katz",
-    role: "CEO",
-    description:
-      "3+ years of experience in paid search advertising. Skilled in campaign management and performance analys",
-    link: "https://linkedin.com",
-  },
+  }
 ];
 ---
 
 <Section id="about">
-  <div class="mt-[140px]">
-    <SectionTitle sectionTitle="Team" description={description} />
+    <SectionTitle sectionTitle="Nuestro Equipo" description={description} />
     <div
-      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 grid-rows-1 gap-10"
     >
       {
         team.map((member, index) => (
@@ -86,8 +48,4 @@ const team = [
         ))
       }
     </div>
-    <div class="flex justify-end mt-10">
-      <button class="btn-primary">See all team</button>
-    </div>
-  </div>
 </Section>

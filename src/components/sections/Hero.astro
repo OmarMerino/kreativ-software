@@ -1,31 +1,39 @@
 ---
 import { Image } from "astro:assets";
-import HeroIlust from "../../assets/pics/hero-pic.png";
+import HeroIlust from "../../assets/pics/2-4.jpg";
 import Section from "./Section.astro";
 ---
 
 <Section id="home">
-  <div
-    class="grid grid-cols-1 grid-template md:grid-cols-2 md:grid-rows-1 mt-[135px]"
-  >
-    <div class="flex flex-col w-full lg:w-[66.5%]">
-      <h1>Navigating the digital landscape for success</h1>
-    </div>
-    <picture class="row-span-1 md:row-span-3">
-      <Image src={HeroIlust} alt="Hero Ilustration" loading="eager" />
-    </picture>
-    <div class="w-full lg:w-[66.5%]">
-      <p class="my-[35px]">
-        Our digital marketing agency helps businesses grow and succeed online
-        through a range of services including SEO, PPC, social media marketing,
-        and content creation.
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[170px] items-center">
+    <!-- Contenido de texto -->
+    <div class="flex flex-col items-start w-full lg:w-[75%]">
+      <h1 class="text-4xl font-semibold mb-4">Construyendo Fundamentos Sólidos para el Futuro</h1>
+
+      <!-- Imagen entre el título y el texto en vista móvil -->
+      <picture class="md:hidden w-full flex justify-center items-center my-6">
+        <Image
+          src={HeroIlust}
+          alt="Hero Ilustration"
+          loading="eager"
+          class="rounded-lg w-full h-auto max-w-[80%] md:max-w-[90%] lg:max-w-[100%]"
+        />
+      </picture>
+
+      <p class="text-xl mb-6">
+        En GeoSys, aseguramos la estabilidad y seguridad de tus proyectos de construcción e infraestructura con tecnología avanzada y un compromiso inquebrantable con la excelencia.
       </p>
-      <button class="btn-primary w-full md:w-auto">Book a consultation</button>
+      <button class="btn-primary w-full md:w-auto">Agenda una consulta</button>
     </div>
+
+    <!-- Imagen para vista de escritorio -->
+    <picture class="hidden md:flex w-full justify-center items-center my-6">
+      <Image
+        src={HeroIlust}
+        alt="Hero Ilustration"
+        loading="eager"
+        class="rounded-lg w-full h-auto max-w-[90%] md:max-w-[90%] lg:max-w-[100%]"
+      />
+    </picture>
   </div>
 </Section>
-<style>
-  .grid-template {
-    grid-template-rows: auto 1fr;
-  }
-</style>

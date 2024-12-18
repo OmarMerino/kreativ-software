@@ -3,29 +3,29 @@ import { Image } from "astro:assets";
 
 const navLinks = [
   {
-    name: "About us",
+    name: "Acerca de nosotros ",
     href: "#about",
   },
   {
-    name: "Services",
+    name: "Servicios",
     href: "#services",
   },
   {
-    name: "Use cases",
+    name: "Proyectos",
     href: "#cases",
   },
   {
-    name: "Testimonials",
+    name: "Testimonios",
     href: "#testimonials",
   },
   {
-    name: "Contact",
+    name: "Contacto",
     href: "#contact",
   },
 ];
 
 import bars from "../../assets/bars.svg";
-import brand from "../../assets/brand.svg";
+import brand from "../../assets/logo2.png";
 ---
 
 <div
@@ -38,9 +38,13 @@ import brand from "../../assets/brand.svg";
     style="max-width: 1280px;"
   >
     <!-- Brand -->
-    <div class="pl-4 xl:flex-none">
+    <div class="pl-4 xl:flex-none flex items-center">
       <a href="#home">
-        <Image src={brand} alt="Brand Logo" class="w-[219px]" loading="eager" />
+        <Image 
+          src={brand} 
+          alt="logo" 
+          class="h-16 w-auto" 
+        />
       </a>
     </div>
 
@@ -65,9 +69,9 @@ import brand from "../../assets/brand.svg";
       </ul>
 
       <!-- Login -->
-      <div class="flex xl:flex-row xl:items-center px-4 xl:gap-4 flex-col">
+      <!-- <div class="flex xl:flex-row xl:items-center px-4 xl:gap-4 flex-col">
         <button class="btn-secondary">Request a quote</button>
-      </div>
+      </div> -->
     </div>
 
     <!-- Hamburger menu -->
