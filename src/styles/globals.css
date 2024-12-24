@@ -15,10 +15,11 @@
 
 
   :root {
-    --green: #b9ff66;
+    --green: #D36C16;
     --black: rgb(0, 0, 0);
-    --dark: #191a23;
+    --dark: #FF8415;
     --white: #f3f3f3;
+    --gris:rgba(178,178,178,0.3226540616246498) 100%
   }
 
   @layer base {

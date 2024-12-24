@@ -1,14 +1,14 @@
 ---
-import { Image } from "astro:assets";
-import decorForm from "../../assets/logo2.png";
+import SectionTitle from "./SectionTitle.astro";
 ---
 
 <div
-  class="flex flex-col lg:flex-row relative justify-start items-center p-8 bg-[#ffff] rounded-2xl overflow-hidden"
+  class="flex flex-row lg:flex-row relative justify-start items-center p-8 bg-[#ffff] rounded-2xl overflow-hidden"
 >
   <!-- Formulario -->
-  <form class="bg-[#ffff] sm:p-4 h-full w-full lg:max-w-lg">
-    <div class="mb-3">
+  <form class="bg-[#ffff] sm:p-4 h-full w-full lg:max-w-lg lg:mx-auto">
+
+    <div class="mt-5 mb-3">
       <label for="name" class="block text-black mb-1 text-sm">Nombre</label>
       <input
         type="text"
@@ -54,25 +54,25 @@ import decorForm from "../../assets/logo2.png";
       ></textarea>
     </div>
 
-    <button type="submit" name="submit" class="btn-primary w-full text-sm py-4"
-      >Enviar</button
-    >
+    <button type="submit" name="submit" class="btn-primary w-full text-sm py-4">
+      Enviar
+    </button>
   </form>
-
-  <iframe
-    class="px-5 ml-5"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.990885020802!2d-72.10667582452129!3d-36.60252857230404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7d0c244229b%3A0xf4f0beb1bc26c26f!2sCarrera%20257%2C%203800410%20Chill%C3%A1n%2C%20%C3%91uble!5e0!3m2!1ses!2scl!4v1734576596824!5m2!1ses!2scl"
-    width="400"
-    height="300"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  >
-  </iframe>
 </div>
 
-<script>
+<style>
+  p{
+    font-size: 1.25rem;
+  }
+  .gradient-background {
+    background: rgb(249, 178, 0);
+    background: radial-gradient(
+      circle,
+      rgba(249, 178, 0, 0.7232142857142857) 14%,
+      rgba(249, 178, 0, 0.6559873949579832) 90%
+    );
+  }
+</style><script>
   function formSetup() {
     var cb1 = document.getElementById("checkbox1") as HTMLInputElement;
     var cb2 = document.getElementById("checkbox2") as HTMLInputElement;

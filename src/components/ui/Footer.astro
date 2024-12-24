@@ -1,32 +1,70 @@
 ---
 // Footer.astro
+import brand from "../../assets/logopng.png";
+import { Image } from "astro:assets";
+import SectionTitle from "./SectionTitle.astro";
 ---
 
-<footer class="p-8 foot">
-  <div
-    class="container mx-auto flex flex-col md:flex-row justify-end items-center"
-  >
-
-    <iframe
-      class="px-5"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.990885020802!2d-72.10667582452129!3d-36.60252857230404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7d0c244229b%3A0xf4f0beb1bc26c26f!2sCarrera%20257%2C%203800410%20Chill%C3%A1n%2C%20%C3%91uble!5e0!3m2!1ses!2scl!4v1734576596824!5m2!1ses!2scl"
-      width="400"
-      height="300"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
+<footer class="w-full">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!--Grid-->
+    <div
+      class="grid grid-cols-2 grid-rows-3 gap-3 md:gap-8 py-10 max-sm:max-w-sm max-sm:mx-auto gap-y-8"
     >
-    </iframe>
+      <div class="row-span-3 col-span-2 mb-10 lg:col-span-1 lg:mb-0">
+        <a href="/" class="flex justify-center lg:justify-start">
+          <Image src={brand} alt="logo" class="h-32 w-auto" />
+        </a>
+        <p
+          class="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left"
+        >
+          Trusted in more than 100 countries & 5 million customers. Have any
+          query?
+        </p>
+        <a
+          href="javascript:;"
+          class="py-2.5 px-5 h-9 block w-fit bg-[#F9B200] rounded-full shadow-sm text-xs text-white mx-auto transition-all duration-500 hover:bg-[#F9B200]/80 lg:mx-0"
+        >
+          Contáctanos
+        </a>
+      </div>
+      <div
+        class="col-span-2 lg:col-span-1 lg:col-start-2 row-span-3 flex flex-col items-center"
+      >
+        <SectionTitle sectionTitle="Visítanos" description="" />
+        <iframe
+          class="rounded-lg border border-gray-300 mt-4"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.990885020802!2d-72.10667582452129!3d-36.60252857230404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7d0c244229b%3A0xf4f0beb1bc26c26f!2sCarrera%20257%2C%203800410%20Chill%C3%A1n%2C%20%C3%91uble!5e0!3m2!1ses!2scl!4v1734576596824!5m2!1ses!2scl"
+          width="300"
+          height="250"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="py-7 border-t border-gray-200">
+      <div
+        class="flex items-center justify-center flex-col lg:justify-between lg:flex-row"
+      >
+        <span class="text-sm text-gray-500">
+          © <a href="" class="text-[#F9B200] hover:text-[#F9B200]/80">Geosys</a
+          > 2024, Todos los derechos reservados.
+        </span>
+      </div>
+    </div>
   </div>
 </footer>
 
 <style>
-  /* From Uiverse.io by vinodjangid07 */
-  .mapa {
-    padding: 5px;
-  }
-  .foot {
-
+  .footer {
+    background: rgb(178, 178, 178);
+    background: linear-gradient(
+      0deg,
+      rgba(178, 178, 178, 0.272233893557423) 2%,
+      rgba(255, 251, 251, 0.38988095238095233) 81%
+    );
   }
 </style>

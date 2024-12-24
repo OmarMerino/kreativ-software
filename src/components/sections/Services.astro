@@ -1,85 +1,116 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
-import ServiceCard from "../ui/ServiceCard.astro";
 import Section from "./Section.astro";
+import img from "../../assets/pics/perforacion.jpg";
+import { Image } from "astro:assets";
 
-import c1 from "../../assets/pics/card-pic1.png";
-import c2 from "../../assets/pics/card-pic2.png";
-import c3 from "../../assets/pics/card-pic3.png";
-import c4 from "../../assets/pics/card-pic4.png";
-import c5 from "../../assets/pics/card-pic5.png";
-import c6 from "../../assets/pics/card-pic6.png";
-
+// Datos para las tarjetas
 const cards = [
   {
-    index: 1,
-    titleTop: "Search Engine",
-    titleBottom: "Optimization",
-    img: c1,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "¿Por qué Elegirnos?",
+    items: [
+      "Garantiza la seguridad y estabilidad estructural en tus proyectos.",
+      "Resultados confiables respaldados por pruebas técnicas avanzadas.",
+      "Optimiza costos y tiempos al conocer las condiciones del terreno.",
+    ],
   },
   {
-    index: 0,
-    titleTop: "Pay-per-click",
-    titleBottom: "advertising",
-    img: c2,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "Servicio Personalizado",
+    items: [
+      "Adaptamos nuestros estudios a las necesidades de tu proyecto.",
+      "Atención técnica profesional durante todo el proceso.",
+      "Informes claros y detallados para decisiones informadas.",
+    ],
   },
   {
-    index: 0,
-    titleTop: "Social Media",
-    titleBottom: "Marketing",
-    img: c3,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 1,
-    titleTop: "Email",
-    titleBottom: "Marketing",
-    img: c4,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 1,
-    titleTop: "Content",
-    titleBottom: "Creation",
-    img: c5,
-    alt: "SEO",
-    link: "https://google.com",
-  },
-  {
-    index: 0,
-    titleTop: "Analytics and",
-    titleBottom: "Tracking",
-    img: c6,
-    alt: "SEO",
-    link: "https://google.com",
+    title: "Tecnología Avanzada",
+    items: [
+      "Equipos modernos para resultados precisos.",
+      "Técnicas de perforación y análisis avanzadas.",
+      "Garantía de calidad en cada estudio realizado.",
+    ],
   },
 ];
 
-const description ="";
+// Descripción del servicio de sondeo geotécnico
+const geotechnicalService = {
+  title: "Sondeo Geotécnico: Un Estudio Esencial para Tu Proyecto",
+  description:
+    "Un sondeo geotécnico es una técnica de exploración del terreno que utiliza perforaciones de pequeño diámetro para investigar las características geológicas e hidrológicas bajo la superficie. Este método permite obtener muestras del suelo o de la roca y realizar diversos ensayos directamente en el campo, lo cual es crucial para la planificación y ejecución de proyectos de construcción e ingeniería civil.",
+  process: [
+    "Reconocimiento del Terreno: Mediante perforaciones, se identifican las diferentes capas del suelo o roca y se recogen muestras para análisis detallado.",
+    "Ensayos In Situ: Pruebas como el ensayo de penetración estándar (SPT) o pruebas de presiómetro se realizan para evaluar propiedades mecánicas y estructurales del subsuelo.",
+    "La elección de la técnica y herramientas depende de la profundidad deseada, el tipo de suelo, y los objetivos específicos del estudio, como determinar la ubicación del nivel freático, la composición del suelo, o la idoneidad del terreno para soportar estructuras.",
+  ],
+  benefits: [
+    "Garantiza la seguridad y estabilidad de las estructuras.",
+    "Permite planificar adecuadamente cualquier intervención en el terreno.",
+    "Fundamental para la ejecución de proyectos de ingeniería civil.",
+  ],
+};
 ---
 
 <Section>
-  <div class="mt-[140px] mb-5">
-    <SectionTitle sectionTitle="Ofrecemos Los Siguientes Servicios" description={description} />
-    <div class="grid lg:grid-cols-2 lg:grid-rows-3 gap-10">
-      {
-        cards.map((card) => (
-          <ServiceCard
-            index={card.index}
-            titleTop={card.titleTop}
-            titleBottom={card.titleBottom}
-            img={card.img}
-            alt={card.alt}
-            link={card.link}
-          />
-        ))
-      }
+  <SectionTitle sectionTitle="Explora el Terreno, Construye con Confianza" />
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[100px] items-center">
+    <!-- Contenido de texto -->
+    <div class="flex flex-col items-start w-full lg:w-[75%]">
+      <h1 class="text-3xl font-semibold mb-4">Sondeo Geotecnico: La Base de tu Proyecto </h1>
+
+      <!-- Imagen entre el título y el texto en vista móvil -->
+      <picture class="md:hidden w-full flex justify-center items-center my-6">
+        <Image
+          src={img}
+          alt="Hero Ilustration"
+          loading="eager"
+          class="rounded-lg w-full h-auto max-w-[80%] md:max-w-[90%] lg:max-w-[100%]"
+        />
+      </picture>
+
+      <p class="text-xl mb-6">
+        Obtén un análisis preciso del terreno mediante perforaciones y
+        extracción de muestras. Evaluamos la estabilidad y composición del
+        subsuelo para garantizar la seguridad y viabilidad de tu construcción.
+        ¡Asegura el éxito de tu proyecto con un sondeo geotécnico profesional!
+      </p>
+      <button class="btn-primary w-full md:w-auto"
+        >Conoce más</button
+      >
+      
     </div>
+
+    <!-- Imagen para vista de escritorio -->
+    <picture class="hidden md:flex w-full justify-center items-center my-6">
+      <Image
+        src={img}
+        alt="Hero Ilustration"
+        loading="eager"
+        class="rounded-lg w-full h-auto max-w-[90%] md:max-w-[90%] lg:max-w-[70%]"
+      />
+    </picture>
+  </div>
+
+  <!-- Sección de las Cards -->
+  <div
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-16"
+  >
+    {
+      cards.map((card) => (
+        <div class="mb-4 w-full max-w-md rounded-2xl bg-[#ffffff] shadow-xl mx-auto">
+          <div class="flex flex-col p-8">
+            <div class="text-xl font-bold text-center text-[#374151] pb-6">
+              {card.title}
+            </div>
+
+            <ul class="space-y-4 text-black-500 text-center text-[#374151] list-disc list-inside dark:text-gray-400">
+              {card.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </Section>

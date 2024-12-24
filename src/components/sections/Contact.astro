@@ -4,14 +4,19 @@ import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
 ---
 
-<Section id="contact" >  
+<Section id="contact">
   <div class="relative">
-    <SectionTitle
-      sectionTitle="Contáctanos"
-      description=""
-    />
+    <SectionTitle sectionTitle="¿Conversemos?" description="" />
+    <p class="text-sm text-gray-500">
+      Llámanos al +569 59158741 , escríbenos a info@Geosys.cl o rellena el
+      siguiente formulario:
+    </p>
     <Form />
-    
   </div>
-  
 </Section>
+
+<style>
+  p {
+    font-size: 1.25rem;
+  } 
+</style>
