@@ -3,7 +3,7 @@ import SectionTitle from "./SectionTitle.astro";
 ---
 
 <div
-  class="flex flex-col lg:flex-row relative justify-center items-center p-8 bg-[#ffff] rounded-2xl overflow-hidden"
+  class="formulario flex flex-col lg:flex-row relative justify-center items-center p-8 rounded-2xl overflow-hidden"
 >
   <!-- Formulario -->
   <form
@@ -11,7 +11,7 @@ import SectionTitle from "./SectionTitle.astro";
     action="https://formspree.io/f/mjkkgelj"
     method="POST"
     target="_blank"
-    class="bg-[#ffff] sm:p-4 h-full w-full lg:max-w-lg lg:mx-auto"
+    class="sm:p-4 h-full w-full lg:max-w-lg lg:mx-auto rounded-2xl"
   >
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div class="mt-5 mb-3">
@@ -94,6 +94,10 @@ import SectionTitle from "./SectionTitle.astro";
 </div>
 
 <style>
+  .formulario {
+    background: rgb(245,244,244);
+    background: linear-gradient(90deg, rgba(245,244,244,0.6559873949579832) 17%, rgba(245,244,244,1) 83%);
+  }
   .message {
     background: rgb(254, 235, 217);
     background: linear-gradient(

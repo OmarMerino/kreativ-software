@@ -1,0 +1,67 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+import { Image } from "astro:assets"; // Importa el componente de manejo de imágenes
+import proy1 from "../../assets/pics/2-4.jpg";
+import proy2 from "../../assets/pics/1.jpg";
+import proy3 from "../../assets/pics/DON-ENRIQUE.jpg";
+import proy4 from "../../assets/pics/card-pic3.png";
+
+const projects = [
+  {
+    id: 1,
+    title: "Sistema de Gestión de Obras",
+    description:
+      "Plataforma web para el control y seguimiento de proyectos de construcción en tiempo real.",
+    image: proy1,
+    link: "#",
+  },
+  {
+    id: 2,
+    title: "Optimización de Rutas de Transporte",
+    description:
+      "Aplicación que utiliza inteligencia artificial para optimizar las rutas y reducir costos logísticos.",
+    image: proy2,
+    link: "#",
+  },
+];
+---
+
+<Section id="projects">
+  <SectionTitle sectionTitle="Conoce    Nuestros Proyectos" />
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-[100px] mb-[50px]"
+  >
+    {
+      projects.map((project) => (
+        <div class="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+          <div class="relative h-40 overflow-hidden rounded-t-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
+            <Image
+              src={project.image}
+              alt={project.title}
+              class="h-full w-full object-cover"
+            />
+          </div>
+          <div class="flex flex-col justify-between flex-1 p-6">
+            <div>
+              <h5 class="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased">
+                {project.title}
+              </h5>
+              <p class="block font-sans text-base font-light leading-relaxed text-inherit antialiased">
+                {project.description}
+              </p>
+            </div>
+            <div class="mt-4">
+              <a
+                href={project.link}
+                class="inline-block select-none rounded-lg bg-[#F9B200] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+              >
+                Leer más
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Section>

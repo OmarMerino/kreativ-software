@@ -53,7 +53,9 @@ const geotechnicalService = {
 <Section id="services">
   <SectionTitle sectionTitle="Explora el Terreno, Construye con Confianza" />
 
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[100px] mt-[75px] items-center">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[100px] mt-[75px] items-center"
+  >
     <!-- Contenido de texto -->
     <div class="flex flex-col items-start w-full lg:w-[75%]">
       <h1 class="text-3xl font-semibold mb-4">
@@ -91,12 +93,14 @@ const geotechnicalService = {
   </div>
 
   <!-- Sección de las Cards -->
-  <div data-aos="fade-up" data-aos-delay="200"
+  <div
+    data-aos="fade-up"
+    data-aos-delay="200"
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-16"
   >
     {
       cards.map((card) => (
-        <div class="card mb-4 w-full max-w-md rounded-2xl bg-[#ffffff] shadow-xl mx-auto">
+        <div class="card mb-4 w-full max-w-md rounded-2xl  shadow-xl mx-auto">
           <div class="flex flex-col p-8">
             <div class="text-xl font-bold text-center text-[#374151] pb-6">
               {card.title}
@@ -118,7 +122,7 @@ const geotechnicalService = {
   .card {
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
-    background-color: rgba(255,132,21, 0.1);
+    background-color: rgba(245, 117, 5, 0.1);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
   }
