@@ -3,49 +3,60 @@ import SectionTitle from "./SectionTitle.astro";
 ---
 
 <div
-  class="flex flex-row lg:flex-row relative justify-start items-center p-8 bg-[#ffff] rounded-2xl overflow-hidden"
+  class="flex flex-col lg:flex-row relative justify-center items-center p-8 bg-[#ffff] rounded-2xl overflow-hidden"
 >
   <!-- Formulario -->
   <form
+    id="contact-form"
     action="https://formspree.io/f/mjkkgelj"
     method="POST"
+    target="_blank"
     class="bg-[#ffff] sm:p-4 h-full w-full lg:max-w-lg lg:mx-auto"
   >
-    <div class="mt-5 mb-3">
-      <label for="name" class="block text-black mb-1 text-sm">Nombre</label>
-      <input
-        type="text"
-        id="name"
-        name="name"
-        placeholder="Nombre"
-        class="w-full px-3 py-2 border border-black rounded-md text-black outline-none text-sm"
-      />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="mt-5 mb-3">
+        <label for="name" class="block text-black mb-1 text-sm">Nombre</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Nombre"
+          class="w-full px-3 py-2 border border-black rounded-md text-black outline-none text-sm"
+        />
+      </div>
+      <div class="mt-5 mb-3">
+        <label for="asunto" class="block text-black mb-1 text-sm">Asunto</label>
+        <input
+          type="text"
+          id="asunto"
+          name="asunto"
+          placeholder="Asunto"
+          class="w-full px-3 py-2 border border-black rounded-md text-black outline-none text-sm"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="block text-black mb-1 text-sm">Email*</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          class="w-full px-3 py-2 border border-black rounded-md text-black outline-none text-sm"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="number" class="block text-black mb-1 text-sm"
+          >Número telefónico</label
+        >
+        <input
+          type="number"
+          id="number"
+          name="number"
+          placeholder="+56 9 XXXXXXXX"
+          class="w-full px-3 py-2 border border-black rounded-md text-black outline-none text-sm"
+        />
+      </div>
     </div>
-
-    <div class="mb-3">
-      <label for="email" class="block text-black mb-1 text-sm">Email*</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Email"
-        class="w-full px-3 py-2 border border-black rounded-md text-black outline-none text-sm"
-      />
-    </div>
-
-    <div class="mb-3">
-      <label for="number" class="block text-black mb-1 text-sm"
-        >Número telefónico</label
-      >
-      <input
-        type="number"
-        id="number"
-        name="number"
-        placeholder="+56 9 XXXXXXXX"
-        class="w-full px-3 py-2 border border-black rounded-md text-black outline-none text-sm"
-      />
-    </div>
-
     <div class="mb-3">
       <label for="message" class="block text-black mb-1 text-sm">Mensaje*</label
       >
@@ -56,14 +67,42 @@ import SectionTitle from "./SectionTitle.astro";
         class="w-full px-3 py-5 border border-black rounded-md text-black outline-none text-sm"
       ></textarea>
     </div>
-
     <button type="submit" name="submit" class="btn-primary w-full text-sm py-4">
       Enviar
     </button>
   </form>
+  <!-- <div id="confirmation-message" class="hidden">
+    <h3>
+      ¡Gracias por contactarnos! Tu mensaje ha sido enviado, Luego nos
+      contactaremos contigo.
+    </h3>
+  </div> -->
+
+  <div
+    id="confirmation-message"
+    class="hidden message w-100 border border-slate-300 grid grid-col-2 justify-center p-4 gap-4 rounded-lg shadow-md"
+  >
+    <div
+      class="col-span-2 text-lg text-gray-700 font-bold capitalize rounded-md"
+    >
+      ¡Gracias por tu mensaje!
+    </div>
+    <div class="col-span-2 rounded-md text-gray-700">
+      Dentro de poco nos contactaremos contigo.
+    </div>
+  </div>
 </div>
 
 <style>
+  .message {
+    background: rgb(254, 235, 217);
+    background: linear-gradient(
+      90deg,
+      rgba(254, 235, 217, 1) 0%,
+      rgba(249, 178, 0, 0.70640756302521) 95%
+    );
+  }
+
   p {
     font-size: 1.25rem;
   }
@@ -75,38 +114,45 @@ import SectionTitle from "./SectionTitle.astro";
       rgba(249, 178, 0, 0.6559873949579832) 90%
     );
   }
-</style><script>
-  function formSetup() {
-    var cb1 = document.getElementById("checkbox1") as HTMLInputElement;
-    var cb2 = document.getElementById("checkbox2") as HTMLInputElement;
-    var message = document.getElementById("message") as HTMLInputElement;
+  .hidden {
+    display: none;
+  }
+</style>
 
-    if (cb1 && cb2) {
-      cb1.checked = true;
+<script is:inline>
+  function handleSubmit(event) {
+    event.preventDefault(); // Previene el comportamiento por defecto del formulario
 
-      cb2.addEventListener("change", function () {
-        if (cb2.checked) {
-          cb1.checked = false;
-          message.value =
-            "We're interested in your services! Please contact us";
-        } else {
-          message.value = "";
-          cb1.checked = true;
-        }
-      });
-      cb1.addEventListener("change", function () {
-        if (cb1.checked) {
-          cb2.checked = false;
-          message.value = "";
-        } else {
-          cb2.checked = true;
-          message.value =
-            "We're interested in your services! Please contact us";
-        }
-      });
-    }
+    // Oculta el formulario
+    document.getElementById("contact-form").style.display = "none";
+
+    // Muestra el mensaje de confirmación
+    document.getElementById("confirmation-message").classList.remove("hidden");
+
+    // Crear un nuevo formulario para enviar la solicitud
+    const form = document.createElement("form");
+    form.action = event.target.action;
+    form.method = event.target.method;
+    form.target = "_blank";
+
+    // Copiar todos los campos del formulario original
+    new FormData(event.target).forEach((value, key) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = value;
+      form.appendChild(input);
+    });
+
+    // Agregar el formulario al cuerpo y enviarlo
+    document.body.appendChild(form);
+    form.submit();
+
+    // Eliminar el formulario después de enviarlo
+    document.body.removeChild(form);
   }
 
-  formSetup();
-  document.addEventListener("astro:after-swap", formSetup);
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", handleSubmit);
 </script>
