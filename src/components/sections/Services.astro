@@ -1,7 +1,9 @@
 ---
 import SectionTitle from "../ui/SectionTitle.astro";
 import Section from "./Section.astro";
-import img from "../../assets/pics/perforacion.jpg";
+// import img from "../../assets/pics/perforacion.jpg";
+import img from "../../assets/pics/2-4.jpg";
+
 import { Image } from "astro:assets";
 
 // Datos para las tarjetas
@@ -50,11 +52,11 @@ const geotechnicalService = {
 };
 ---
 
-<Section id="services">
-  <SectionTitle sectionTitle="Explora el Terreno, Construye con Confianza" />
+<SectionTitle sectionTitle="Nuestros Servicios" id="services" />
 
+<Section>
   <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[100px] mt-[75px] items-center"
+    class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-[100px] mt-[20px] items-center"
   >
     <!-- Contenido de texto -->
     <div class="flex flex-col items-start w-full lg:w-[75%]">
@@ -72,11 +74,14 @@ const geotechnicalService = {
         />
       </picture>
 
-      <p class="text-xl mb-6">
-        Obtén un análisis preciso del terreno mediante perforaciones y
-        extracción de muestras. Evaluamos la estabilidad y composición del
-        subsuelo para garantizar la seguridad y viabilidad de tu construcción.
-        ¡Asegura el éxito de tu proyecto con un sondeo geotécnico profesional!
+      <p class="text-xl mb-4 text-justify">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non soluta
+        voluptatum, ratione alias ea dolore obcaecati, corporis nostrum commodi
+        ut et! Rem quia distinctio saepe a minus sit iure deleniti! Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Voluptatum optio quis
+        excepturi sunt vero magni dolorum molestias ab assumenda eum sequi
+        consectetur laboriosam ad, repellat tenetur fugit reiciendis impedit
+        modi.
       </p>
       <button class="btn-primary w-full md:w-auto">Conoce más</button>
     </div>

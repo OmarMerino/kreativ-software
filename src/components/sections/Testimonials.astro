@@ -4,13 +4,15 @@ import SwiperSlider from "../ui/SwiperSlider.astro";
 import Section from "./Section.astro";
 ---
 
-<Section id="testimonials">
+<SectionTitle
+  sectionTitle="Testimonios"
+  description=""
+  id="testimonials"
+/>
+<Section >
   <div>
     <!-- Reduce el margen superior -->
-    <SectionTitle
-      sectionTitle="Testimonios de nuestros clientes"
-      description="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services"
-    />
+
     <div class="cont rounded-[30px] bg-[#B2B2B2] text-white">
       <!-- Ajustar bordes y márgenes -->
       <SwiperSlider />

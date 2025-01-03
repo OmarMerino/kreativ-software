@@ -4,14 +4,14 @@ import HeroIlust from "../../assets/pics/2-4.jpg";
 import Section from "./Section.astro";
 ---
 
-<div id="default-carousel" class="z-0 relative w-full h-full mt-[85px] ml-[2px]" data-carousel="slide">
+<div id="default-carousel" class="z-0 relative w-full mt-[109px] ml-[2px]" data-carousel="slide">
   <!-- Carousel wrapper -->
   <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
     <!-- Item 1 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
       <Image
         src={HeroIlust}
-        class="absolute block w-full object-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+        class="absolute block w-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="..."
       />
     </div>
@@ -19,7 +19,7 @@ import Section from "./Section.astro";
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
       <img
         src="https://esbing.cl/wp-content/uploads/2022/09/Ana%CC%81lisis-Confiables-2.jpg"
-        class="absolute block w-full h-full object-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+        class="absolute block w-full h-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="..."
       />
     </div>
@@ -69,7 +69,7 @@ import Section from "./Section.astro";
       data-carousel-slide-to="4"></button>
   </div>
   <!-- Slider controls -->
-  <button
+  <!-- <button
     type="button"
     class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
     data-carousel-prev
@@ -93,8 +93,8 @@ import Section from "./Section.astro";
       </svg>
       <span class="sr-only">Previous</span>
     </span>
-  </button>
-  <button
+  </button> -->
+  <!-- <button
     type="button"
     class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
     data-carousel-next
@@ -118,35 +118,46 @@ import Section from "./Section.astro";
       </svg>
       <span class="sr-only">Next</span>
     </span>
-  </button>
+  </button> -->
 </div>
-
-
-
-
 <Section id="hero">
   
 
-  <div class="grid grid-cols-1 md:grid-cols-1 mt-[80px] items-center ">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[75px] items-center">
     <!-- Contenido de texto -->
-    <div class="flex flex-col items-start w-full ">
-      <h1 class="text-3xl mb-4 text-[#575756]">
-        Bienvenidos a <span class="font-bold text-[#A65317]">Geosys</span>
-      </h1>
-      
+    <div class="flex flex-col items-start w-full lg:w-[75%]">
+      <h1 class="text-3xl font-semibold mb-4">Confianza en cada perforación</h1>
 
+      <!-- Imagen entre el título y el texto en vista móvil -->
+      <picture class="md:hidden w-full flex justify-center items-center my-6">
+        <Image
+          src={HeroIlust}
+          alt="Hero Ilustration"
+          loading="eager"
+          class="rounded-lg w-full h-auto max-w-[80%] md:max-w-[90%] lg:max-w-[100%]"
+        />
+      </picture>
 
-      <p class="text-lg mb-6 text-justify">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, exercitationem dolor voluptatem blanditiis expedita doloribus provident quos eligendi libero delectus! Eaque ab, quisquam magni perspiciatis sint doloribus magnam autem corporis.´
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, autem ullam obcaecati odio provident voluptatum illo, eveniet voluptate quas nostrum veritatis architecto sed accusamus repellat magni optio atque. Ab, facilis.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quae blanditiis eligendi vitae reprehenderit molestiae, minus, fuga voluptate dolor officia molestias soluta odit consequuntur. Deserunt culpa mollitia saepe quaerat asperiores!
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero sit nesciunt eos eaque beatae doloribus, fugiat cum consequuntur tempora. Maiores iusto laboriosam laudantium perspiciatis odio possimus deleniti debitis accusamus mollitia!
+      <p class="text-xl mb-6">
+        En GeoSys, aseguramos la estabilidad y seguridad de tus proyectos de
+        construcción e infraestructura con tecnología avanzada y un compromiso
+        inquebrantable con la excelencia. En GeoSys, aseguramos la estabilidad y
+        seguridad de tus proyectos de construcción e infraestructura con
+        tecnología avanzada y un compromiso inquebrantable con la excelencia.
       </p>
       <button class="btn-primary w-full md:w-auto"
         >Solicite un presupuesto</button
       >
     </div>
 
-
+    <!-- Imagen para vista de escritorio -->
+    <picture class="hidden md:flex w-full justify-center items-center my-6">
+      <Image
+        src={HeroIlust}
+        alt="Hero Ilustration"
+        loading="eager"
+        class="rounded-lg w-full h-auto max-w-[90%] md:max-w-[90%] lg:max-w-[100%]"
+      />
+    </picture>
   </div>
 </Section>

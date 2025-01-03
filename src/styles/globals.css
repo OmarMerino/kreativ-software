@@ -1,3 +1,4 @@
+@import 'flowbite';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,13 +32,13 @@
     
 
     body {
-      font-size: 20px;
+      /* font-size: 20px;
       background: rgb(255,255,255);
-      background: radial-gradient(circle, rgba(255,255,255,1) 70%, rgba(178,178,178,0.3226540616246498) 100%);
+      background: radial-gradient(circle, rgba(255,255,255,1) 70%, rgba(178,178,178,0.3226540616246498) 100%); */
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 
     h1 {
@@ -90,7 +91,7 @@
 
   @layer components {
     .btn-primary {
-      @apply bg-[#FF8415] text-white rounded-lg px-[35px] py-3 transition-all duration-200;
+      @apply bg-[#F9B200] text-white rounded-lg px-[35px] py-3 transition-all duration-200;
     }
     .btn-primary:hover {
       @apply bg-[#F9B200] text-black transform scale-105;
