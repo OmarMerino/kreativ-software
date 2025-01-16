@@ -16,7 +16,9 @@ import SectionTitle from "./SectionTitle.astro";
           <Image src={brand} alt="logo" class="h-48 w-auto" />
         </a>
         <div class="max-w-7xl mx-auto">
-          <div class="flex flex-col items-center md:items-start text-[#575756] text-[0.95rem] mb-4">
+          <div
+            class="flex flex-col items-center md:items-start text-[#575756] text-[0.95rem] mb-4"
+          >
             <div class="flex flex-col gap-4 md:gap-6">
               <div class="flex items-center space-x-2 whitespace-nowrap">
                 <svg
@@ -41,7 +43,9 @@ import SectionTitle from "./SectionTitle.astro";
                   <path
                     d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
                   ></path>
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                  <path
+                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                  ></path>
                 </svg>
                 <span>info@ejemplo.com</span>
               </div>
@@ -55,15 +59,13 @@ import SectionTitle from "./SectionTitle.astro";
                   <path
                     fill-rule="evenodd"
                     d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                    clip-rule="evenodd"
-                  ></path>
+                    clip-rule="evenodd"></path>
                 </svg>
                 <span>Lun-Vie: 9:00 - 18:00</span>
               </div>
             </div>
           </div>
         </div>
-        
 
         <a
           href="javascript:;"
@@ -75,8 +77,15 @@ import SectionTitle from "./SectionTitle.astro";
       <div
         class="col-span-2 lg:col-span-1 lg:col-start-2 row-span-3 flex flex-col items-center"
       >
+        <h2
+          class="text-lg font-bold text-[#575756] text-center sm:text-center sm:text-2xl p-2 rounded-lg"
+        >
+          ¡Ven y
+          <span class="font-bold text-[#FF8415]">Conócenos</span>
+          <span class="font-bold text-[#575756]">!</span>
+        </h2> 
         <iframe
-          class="rounded-lg border border-gray-300 mt-4"
+          class="rounded-lg border border-gray-300 mt-[80px]"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3202.990885020802!2d-72.10667582452129!3d-36.60252857230404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9668d7d0c244229b%3A0xf4f0beb1bc26c26f!2sCarrera%20257%2C%203800410%20Chill%C3%A1n%2C%20%C3%91uble!5e0!3m2!1ses!2scl!4v1734576596824!5m2!1ses!2scl"
           width="400"
           height="300"

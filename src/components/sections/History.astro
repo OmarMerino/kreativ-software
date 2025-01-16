@@ -2,28 +2,34 @@
 import Section from "./Section.astro";
 import SectionTitle from "../ui/SectionTitle.astro";
 import Card from "../ui/Card.astro";
+import mision from "../../assets/icons/mision.png";
+import vision from "../../assets/icons/vision.png";
+import valores from "../../assets/icons/valores.png"
+import { Image } from "astro:assets";
 ---
-<SectionTitle sectionTitle="Acerca de " description="Nosotros" id="History"/>
+
+<SectionTitle sectionTitle="Acerca de " description="Nosotros" id="History" />
 
 <Section id="">
-
   <div class="container mx-auto text-start">
-    <p class="mb-4 text-base font-normal text-black">
+    <p class="mb-4 text-base font-normal text-[#575756] text-justify">
       En Geosys Spa, nuestra trayectoria está arraigada en la pasión por la
       ingeniería civil y el compromiso con la excelencia geotécnica. Fundada por
-      Enrique Sepúlveda Bornand y Paulo Sepúlveda Aravena.
+      <span class="font-semibold text-[#A65317]">Enrique Sepúlveda Bornand</span
+      > y
+      <span class="font-semibold text-[#A65317]">Paulo Sepúlveda Aravena</span>.
     </p>
 
-    <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    <ol class="relative border-s border-[#A65317]">
       <li class="mb-10 ms-4">
         <div
-          class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+          class="absolute w-3 h-3 bg-[#A65317] rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
         >
         </div>
-        <time class="mb-1 text-sm font-semibold text-gray-400">
+        <time class="mb-1 text-lg font-semibold text-[#A65317]">
           Fundación
         </time>
-        <p class="mb-4 text-base font-normal text-black">
+        <p class="mb-4 text-base font-normal text-[#575756]">
           Enrique, ingeniero civil con más de 20 años de experiencia, y Paulo,
           laboratorista vial con 30 años en laboratorios de suelos, unieron sus
           conocimientos en estructuras y prospección geofísica aplicada a la
@@ -32,15 +38,13 @@ import Card from "../ui/Card.astro";
       </li>
       <li class="mb-10 ms-4">
         <div
-          class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+          class="absolute w-3 h-3 bg-[#A65317] rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
         >
         </div>
-        <time
-          class="mb-1 text-sm font-semibold leading-none text-gray-400 dark:text-gray-500"
-        >
+        <time class="mb-1 text-lg font-semibold text-[#A65317]">
           Expansión
         </time>
-        <p class="text-base font-normal text-black">
+        <p class="text-base font-normal text-[#575756]">
           Innovamos en sondajes y perforaciones geotécnicas, expandiendo nuestra
           presencia al centro-sur de Chile y liderando el sector con tecnologías
           avanzadas y prácticas sostenibles.
@@ -48,13 +52,13 @@ import Card from "../ui/Card.astro";
       </li>
       <li class="ms-4">
         <div
-          class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+          class="absolute w-3 h-3 bg-[#A65317] rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
         >
         </div>
-        <time class="mb-1 text-sm font-semibold text-black dark:text-gray-500">
+        <time class="mb-1 text-lg font-semibold text-[#A65317]">
           Compromiso
         </time>
-        <p class="text-base font-normal text-black">
+        <p class="text-base font-normal text-[#575756]">
           Ofrecemos exploraciones detalladas del suelo y subsuelo, asegurando
           construcción segura. Nuestro compromiso con la ética y el
           profesionalismo brinda confianza en cada perforación.
@@ -62,4 +66,127 @@ import Card from "../ui/Card.astro";
       </li>
     </ol>
   </div>
+
+  
+  <div class="mt-[100px] grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section id="card1" class="card">
+      <div class="flex flex-col items-center gap-x-4">
+        <Image src={mision} class="h-48 w-auto" alt="Ícono de Misión" />
+        <h2 class="text-[1.75rem] text-white font-bold">Misión</h2>
+      </div>
+      <div class="card__content">
+        <p class="text-white text-justify text-lg">
+          En Geosys Spa, nos dedicamos a proporcionar sondajes y perforaciones
+          geotécnicas precisas y sostenibles para empresas públicas y privadas,
+          utilizando tecnología avanzada y maquinaria compacta para liderar con
+          integridad y eficiencia.
+        </p>
+      </div>
+    </section>
+    
+    <section id="card2" class="card">
+      <div class="flex-col items-center gap-x-4">
+        <Image src={vision} class="h-48 w-auto" alt="Ícono de Visión" />
+        <h2 class="text-[1.75rem] text-white font-bold text-center">Visión</h2>
+      </div>
+      <div class="card__content">
+        <p class="text-white text-justify text-lg">
+          Aspiramos a expandir nuestra influencia más allá de Ñuble, abarcando el
+          centro-sur de Chile. Nos proyectamos como pioneros en la incorporación de
+          tecnologías avanzadas y métodos sostenibles que minimizan el impacto
+          ambiental mientras optimizamos la eficiencia operativa.
+        </p>
+      </div>
+    </section>
+    
+    <section id="card3" class="card">
+      <div class="flex-col items-center gap-x-4">
+        <Image src={valores} class="h-48 w-auto" alt="Ícono de Valores" />
+        <h2 class="text-[1.75rem] text-white text-center font-bold">Valores</h2>
+      </div>
+      <div class="card__content">
+        <p class="mt-4 text-white text-justify ">
+          Confianza, Profesionalismo y Ética. En Geosys Spa la confianza es nuestra
+          base, garantizada a través de un profesionalismo inquebrantable y una
+          ética rigurosa. Nos comprometemos a proporcionar perforaciones
+          geotécnicas precisas, cumpliendo con los más altos estándares de
+          integridad en cada proyecto.
+        </p>
+      </div>
+    </section>
+    
+    
+  </div>
 </Section>
+
+<style>
+  /* From Uiverse.io by samuelfcosta18 */
+  section.card {
+    position: relative;
+    width: 350px;
+    height: 300px;
+    background-color: #A65317;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    perspective: 1000px;
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-bottom: 100px;
+  }
+  .card svg {
+    fill: #333;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-radius: 3px;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px #B2B2B2;
+    background-color: #D36C16;
+    color: #ffffff;
+  }
+
+  .card__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #D36C16;
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .card:hover .card__content {
+    transform: rotateX(0deg);
+  }
+
+  .card__title {
+    margin: 0;
+    padding-left: 5px;
+    font-size: 24px;
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  .card:hover svg {
+    scale: 0;
+  }
+
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 1.4;
+  }
+  /* Commands to change the shadows in dark mode
+@media (prefers-color-scheme: dark) {
+  .card:hover {
+  box-shadow: 0 8px 16px #000000;
+  }
+}*/
+</style>
