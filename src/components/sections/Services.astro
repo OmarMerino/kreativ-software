@@ -9,27 +9,33 @@ import { Image } from "astro:assets";
 // Datos para las tarjetas
 const cards = [
   {
-    title: "¿Por qué Elegirnos?",
+    title: "¿Cómo lo Hacemos?",
     items: [
-      "Garantiza la seguridad y estabilidad estructural en tus proyectos.",
-      "Resultados confiables respaldados por pruebas técnicas avanzadas.",
-      "Optimiza costos y tiempos al conocer las condiciones del terreno.",
+      {
+        text: "Reconocimiento del Terreno: Mediante perforaciones, se identifican las diferentes capas del suelo o roca y se recogen muestras para análisis detallado.",
+        bold: true,
+      },
+      {
+        text: "Ensayos In Situ: Pruebas como el ensayo de penetración estándar (SPT), se realizan para evaluar propiedades mecánicas y estructurales del subsuelo.",
+        bold: true,
+      },
     ],
   },
   {
-    title: "Servicio Personalizado",
+    title: "¿Qué beneficios obtiene?",
     items: [
-      "Adaptamos nuestros estudios a las necesidades de tu proyecto.",
-      "Atención técnica profesional durante todo el proceso.",
-      "Informes claros y detallados para decisiones informadas.",
-    ],
-  },
-  {
-    title: "Tecnología Avanzada",
-    items: [
-      "Equipos modernos para resultados precisos.",
-      "Técnicas de perforación y análisis avanzadas.",
-      "Garantía de calidad en cada estudio realizado.",
+      {
+        text: "Resultados precisos: con métodos rigurosos aseguran la precisión en cada análisis.",
+        bold: true,
+      },
+      {
+        text: "Reducción de riesgos: minimizamos los riesgos en los proyectos de nuestros clientes.",
+        bold: true,
+      },
+      {
+        text: "Eficiencia en costos y tiempo: con enfoque optimizado reduce los tiempos del proyecto.",
+        bold: true,
+      },
     ],
   },
 ];
@@ -52,7 +58,18 @@ const geotechnicalService = {
 };
 ---
 
-<SectionTitle sectionTitle="Nuestros "  description="Servicios" id="services" />
+<!-- 
+  {
+    title: "¿Por qué elegirnos?",
+    items: [
+      { text: "Especialización técnica: los informes con análisis detallados nos distinguen en el mercado por nuestro amplio conocimiento en ingeniería geotécnica.", bold: true },
+      { text: "Ética y profesionalismo: nos regimos por estándares de ética y profesionalismo, asegurando a los clientes transparencia y honestidad en cada proyecto.", bold: true },
+      { text: "Enfoque en la sostenibilidad: somos líderes en implementar prácticas sostenibles que no solo protegen sino que benefician al medio ambiente.", bold: true },
+      { text: "Servicio personalizado: nos adaptamos a las necesidades específicas de cada cliente, ofreciendo soluciones personalizadas que otros no pueden proporcionar.", bold: true },
+      { text: "Tecnología de punta: con nuestra capacidad para utilizar maquinaria compacta de último nivel.", bold: true }
+    ],
+  }, -->
+<SectionTitle sectionTitle="Nuestros " description="Servicios" id="services" />
 
 <Section>
   <div
@@ -61,7 +78,7 @@ const geotechnicalService = {
     <!-- Contenido de texto -->
     <div class="flex flex-col items-start w-full lg:w-[75%]">
       <h1 class="text-3xl font-semibold mb-4">
-        Sondeo Geotecnico: La Base de tu Proyecto
+        Exploración Geotécnica Precisa para Proyectos de Ingeniería
       </h1>
 
       <!-- Imagen entre el título y el texto en vista móvil -->
@@ -75,15 +92,18 @@ const geotechnicalService = {
       </picture>
 
       <p class="text-xl mb-4 text-justify">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non soluta
-        voluptatum, ratione alias ea dolore obcaecati, corporis nostrum commodi
-        ut et! Rem quia distinctio saepe a minus sit iure deleniti! Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Voluptatum optio quis
-        excepturi sunt vero magni dolorum molestias ab assumenda eum sequi
-        consectetur laboriosam ad, repellat tenetur fugit reiciendis impedit
-        modi.
+        Un sondeo geotécnico es una técnica de exploración del terreno que
+        utiliza perforaciones de pequeño diámetro para investigar las
+        características geológicas en el subsuelo. Este método permite obtener
+        muestras del suelo o de la roca y realizar diversos ensayos directamente
+        en terreno y en laboratorio, lo cual es crucial para la planificación y
+        ejecución de proyectos de construcción e ingeniería civil.
       </p>
-      <button class="btn-primary w-full md:w-auto">Conoce más</button>
+      <button
+        class="btn-primary w-full md:w-auto"
+        onclick="window.location.href='https://bit.ly/3d4mgoJ'"
+        >Conoce más</button
+      >
     </div>
 
     <!-- Imagen para vista de escritorio -->
@@ -101,20 +121,28 @@ const geotechnicalService = {
   <div
     data-aos="fade-up"
     data-aos-delay="200"
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-16"
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 px-4 md:px-8 lg:px-16"
   >
     {
       cards.map((card) => (
-        <div class="card mb-4 w-full max-w-md rounded-2xl  shadow-xl mx-auto">
+        <div class="card mb-4 w-full max-w-md rounded-2xl shadow-xl mx-auto">
           <div class="flex flex-col p-8">
             <div class="text-xl font-bold text-center text-[#374151] pb-6">
               {card.title}
             </div>
 
-            <ul class="space-y-4 text-black-500 text-center text-[#374151] list-disc list-inside text-justify">
-              {card.items.map((item) => (
-                <li>{item}</li>
-              ))}
+            <ul class="space-y-4 text-[#374151] text-justify list-disc list-inside">
+              {card.items.map((item) => {
+                const [subtitle, ...description] = item.text.split(":");
+                return (
+                  <li>
+                    <span class={item.bold ? "font-semibold" : ""}>
+                      {subtitle}:
+                    </span>
+                    {description.length > 0 && description.join(":")}
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>
@@ -122,7 +150,26 @@ const geotechnicalService = {
     }
   </div>
 </Section>
+<SectionTitle sectionTitle="¿Por qué elegirnos?" description="" id="" />
 
+<Section>
+  <ul class="space-y-4 text-[#374151] text-justify list-disc list-inside text-lg">
+    {[
+      { text: "Especialización técnica: los informes con análisis detallados nos distinguen en el mercado por nuestro amplio conocimiento en ingeniería geotécnica.", bold: true },
+      { text: "Ética y profesionalismo: nos regimos por estándares de ética y profesionalismo, asegurando a los clientes transparencia y honestidad en cada proyecto.", bold: true },
+      { text: "Enfoque en la sostenibilidad: somos líderes en implementar prácticas sostenibles que no solo protegen sino que benefician al medio ambiente.", bold: true },
+      { text: "Servicio personalizado: nos adaptamos a las necesidades específicas de cada cliente, ofreciendo soluciones personalizadas que otros no pueden proporcionar.", bold: true },
+      { text: "Tecnología de punta: con nuestra capacidad para utilizar maquinaria compacta de último nivel.", bold: true }
+    ].map((item) => {
+      const [subtitle, ...description] = item.text.split(":");
+      return (
+        <li>
+          <span class={item.bold ? "font-semibold text-[#A65317]" : ""}>{subtitle}:</span> {description.join(":")}
+        </li>
+      );
+    })}
+  </ul>
+</Section>
 <style>
   .card {
     backdrop-filter: blur(16px) saturate(180%);

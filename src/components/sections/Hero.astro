@@ -1,10 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import HeroIlust from "../../assets/pics/banner1.png";
+import HeroIlust2 from "../../assets/pics/banner2.png";
 import Section from "./Section.astro";
 ---
 
-<div id="default-carousel" class="z-0 relative w-full h-full mt-[85px] ml-[2px]" data-carousel="slide">
+<div
+  id="default-carousel"
+  class="z-0 relative w-full h-full mt-[85px] ml-[2px]"
+  data-carousel="slide"
+>
   <!-- Carousel wrapper -->
   <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
     <!-- Item 1 -->
@@ -25,13 +30,12 @@ import Section from "./Section.astro";
     </div> -->
     <!-- Item 3 -->
     <div class="hidden duration-700 ease-in-out" data-carousel-item>
-      <img
-        src="https://esbing.cl/wp-content/uploads/2022/09/Ana%CC%81lisis-Confiables-2.jpg"
-        class="absolute block w-full h-full object-contain -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+      <Image
+        src={HeroIlust2}
+        class="absolute block w-auto h-full object-fit -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         alt="..."
       />
     </div>
-
   </div>
   <!-- Slider indicators -->
   <div
@@ -121,32 +125,30 @@ import Section from "./Section.astro";
   </button>
 </div>
 
-
-
-
 <Section id="hero">
-  
-
-  <div class="grid grid-cols-1 md:grid-cols-1 mt-[80px] items-center ">
+  <div class="grid grid-cols-1 md:grid-cols-1 mt-[80px] items-center">
     <!-- Contenido de texto -->
-    <div class="flex flex-col items-start w-full ">
+    <div class="flex flex-col items-start w-full">
       <h1 class="text-3xl mb-4 text-[#575756]">
         Bienvenidos a <span class="font-bold text-[#A65317]">Geosys</span>
       </h1>
-      
-
 
       <p class="text-lg mb-6 text-justify">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, exercitationem dolor voluptatem blanditiis expedita doloribus provident quos eligendi libero delectus! Eaque ab, quisquam magni perspiciatis sint doloribus magnam autem corporis.´
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, autem ullam obcaecati odio provident voluptatum illo, eveniet voluptate quas nostrum veritatis architecto sed accusamus repellat magni optio atque. Ab, facilis.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam quae blanditiis eligendi vitae reprehenderit molestiae, minus, fuga voluptate dolor officia molestias soluta odit consequuntur. Deserunt culpa mollitia saepe quaerat asperiores!
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero sit nesciunt eos eaque beatae doloribus, fugiat cum consequuntur tempora. Maiores iusto laboriosam laudantium perspiciatis odio possimus deleniti debitis accusamus mollitia!
+        Su socio estratégico en sondajes y perforaciones geotécnicas en el
+        centro-sur de Chile, que aseguran la seguridad de los proyectos de
+        construcción e infraestructura, utilizamos tecnología avanzada para
+        analizar y entender el subsuelo. Nuestro compromiso con la excelencia y
+        la innovación se refleja en cada servicio que proporcionamos, apoyados
+        por un equipo de expertos y tecnología de vanguardia. En Geosys,
+        valoramos las relaciones duraderas con nuestros clientes, fomentando un
+        enfoque colaborativo y transparente. Estamos aquí para apoyar el éxito
+        de su proyecto que nos distingue por el profesionalismo técnico,
+        compromiso firme con la ética, eficiencia operativa, respeto al medio
+        ambiente y generación de confianza.
       </p>
-      <button class="btn-primary w-full md:w-auto"
-        >Solicite un presupuesto</button
-      >
+      <a href="https://bit.ly/3d4mgoJ" class="btn-primary w-full md:w-auto">
+        Solicite un presupuesto
+      </a>      
     </div>
-
-
   </div>
 </Section>

@@ -1,0 +1,172 @@
+---
+// Importaciones necesarias
+import MainBlog from "../layouts/MainBlog.astro";
+import Section from "../components/sections/Section.astro";
+import SectionTitle from "../components/ui/SectionTitle.astro";
+import { Image } from "astro:assets";
+import blog1 from "../assets/blog/blog1.png";
+import blog2 from "../assets/blog/perforaciones.jpeg";
+import blog3 from "../assets/blog/diamantina.jpeg";
+import blog4 from "../assets/blog/spt.jpeg";
+import "../styles/globals.css";
+
+// Definir el arreglo de secciones
+const secciones = [
+  {
+    titulo: "¿Qué es un sondaje geotécnico y cómo funciona?",
+    imagen: blog1,
+    alt: "Sondaje geotécnico",
+    contenido: `
+      El <span class="font-semibold text-[#A65317]">sondaje geotécnico</span> es un método de exploración del subsuelo que permite obtener información precisa sobre la composición y resistencia del terreno antes de iniciar una obra. Los <span class="font-semibold text-[#A65317]">sondajes geotécnicos</span> son esenciales para conocer las características del suelo y minimizar riesgos en proyectos de <span class="font-semibold text-[#A65317]">ingeniería civil, construcción e infraestructura</span>.
+
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4 mt-8">Su proceso incluye:</h2>
+      <ol class="list-decimal pl-6 mb-8 text-[#575756] space-y-3">
+        <li><span class="font-semibold">Planificación y ubicación:</span> Se determinan los puntos estratégicos de perforación según los requerimientos del proyecto.</li>
+        <li><span class="font-semibold">Perforación del terreno:</span> Se utilizan equipos especializados para la perforación diamantina y medición de SPT (Standard Penetration Test) para extraer muestras de suelo y roca.</li>
+        <li><span class="font-semibold">Análisis de muestras:</span> Se estudian en laboratorio para determinar su capacidad de carga y otras propiedades mecánicas.</li>
+        <li><span class="font-semibold">Informe geotécnico:</span> Se entrega un informe detallado de la estratigrafía del suelo, nivel freático, SPT e índice RQD, si corresponde.</li>
+      </ol>
+
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4">Beneficios claves para tu proyecto</h2>
+      <ul class="space-y-3 mb-8 text-[#575756]">
+        <li><span class="font-semibold">✅ Reducción de riesgos:</span> Identifica problemas del suelo antes de construir.</li>
+        <li><span class="font-semibold">✅ Optimización de costos y tiempo:</span> Evita imprevistos y sobrecostos en fundaciones.</li>
+        <li><span class="font-semibold">✅ Cumplimiento normativo:</span> Garantiza que el proyecto cumpla con estándares de seguridad.</li>
+        <li><span class="font-semibold">✅ Sostenibilidad y planificación precisa:</span> Reduce el impacto ambiental y mejora la eficiencia en la obra.</li>
+      </ul>
+
+      <p class="text-lg font-semibold text-[#A65317] text-center mb-8">¿Necesitas asegurar la estabilidad de tu obra? ¡Contáctanos hoy y construyamos juntos sobre bases sólidas!</p>
+    `,
+  },
+  {
+    titulo: "¿Qué son las perforaciones geotécnicas y cómo funcionan?",
+    imagen: blog2,
+    alt: "Perforaciones geotécnicas",
+    contenido: `
+      Este proceso consiste en la <span class="font-semibold text-[#A65317]">perforación del suelo</span> con maquinaria especializada para evaluar su resistencia y capacidad de carga antes de iniciar la construcción. Esto permite diseñar fundaciones óptimas que garanticen la estabilidad a largo plazo. <br> <br>
+      Si la base de una construcción no está correctamente estudiada y fundada, <span class="font-semibold text-[#A65317]">puede generar problemas graves como asentamientos diferenciales, fallas estructurales y sobrecostos inesperados.</span> Muchas obras sufren retrasos o incluso colapsos debido a fundaciones mal
+      diseñadas, derivadas de un estudio del subsuelo insuficiente o inexacto.<br>
+      La buena noticia es que las <span class="font-semibold text-[#A65317]">perforaciones geotécnicas</span> ofrecen una solución efectiva,
+      proporcionando datos precisos sobre las condiciones del suelo y permitiendo un diseño
+      estructural seguro y eficiente.
+
+
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4 mt-8">Pasos del proceso:</h2>
+      <ul class="list-disc pl-6 mb-8 text-[#575756] space-y-3">
+        <li><span class="font-semibold">Estudio preliminar del terreno:</span> Se analizan las condiciones geotécnicas del área de construcción.</li>
+        <li><span class="font-semibold">Ubicación estratégica de las perforaciones:</span> Se definen los puntos exactos donde se realizará la perforación.</li>
+        <li><span class="font-semibold">Perforación del suelo:</span> Se emplean técnicas de perforación rotativa a diamantina.</li>
+        <li><span class="font-semibold">Toma de muestras y análisis:</span> Se extraen núcleos del subsuelo y se analizan en laboratorio para determinar sus propiedades mecánicas.</li>
+        <li><span class="font-semibold">Informe técnico:</span> Se entrega un informe con recomendaciones específicas para el diseño de fundaciones.</li>
+      </ul>
+
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4">Beneficios de las perforaciones geotécnicas</h2>
+      <ul class="space-y-3 mb-8 text-[#575756]">
+        <li><span class="font-semibold">✅ Mayor seguridad estructural:</span> Minimiza el riesgo de fallas y asentamientos irregulares.</li>
+        <li><span class="font-semibold">✅ Optimización de costos:</span> Evita gastos imprevistos por fundaciones inadecuadas.</li>
+        <li><span class="font-semibold">✅ Cumplimiento normativo:</span> Garantiza que el proyecto cumpla con las regulaciones técnicas y ambientales.</li>
+        <li><span class="font-semibold">✅ Sostenibilidad:</span> Permite reducir el impacto ambiental mediante una planificación eficiente.</li>
+        <li><span class="font-semibold">✅ Mayor durabilidad del proyecto:</span> Asegura bases sólidas para construcciones que perduren en el tiempo.</li>
+      </ul>
+
+      <p class="text-lg font-semibold text-[#A65317] text-center mb-8"> No dejes la estabilidad de tu proyecto al azar. ¡Contáctanos hoy y construyamos sobre bases
+      firmes y seguras! </p>
+    `,
+  },
+  {
+    titulo: "¿Qué es la perforación diamantina y cómo funciona?",
+    imagen: blog3,
+    alt: "Perforación diamantina",
+    contenido: `
+      La <span class="font-semibold text-[#A65317]">perforación diamantina</span> es un proceso de extracción de muestras del subsuelo utilizando un barril de perforación con coronas impregnadas de diamante, el material más duro conocido. Gracias a esta tecnología, se logran cortes precisos sin dañar la muestra, lo que permite un análisis geotécnico detallado y confiable para la planificación de proyectos de <span class="font-semibold text-[#A65317]">ingeniería civil, geotécnica y minería.</span>
+    <br><br>Tomar decisiones sin conocer las condiciones del subsuelo <span class="font-semibold text-[#A65317]"> puede poner en riesgo la
+    estabilidad estructural y aumentar los costos imprevistos en una obra.</span> Muchas
+    empresas enfrentan fallas en fundaciones y retrasos debido a estudios geotécnicos
+    inadecuados o técnicas de perforación poco eficientes y la <span class="font-semibold text-[#A65317]">perforación diamantina</span> es la
+    solución ideal.
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4 mt-8">Especificaciones Técnicas del Proceso</h2>
+      <ul class="list-disc pl-6 mb-8 text-[#575756] space-y-3">
+        <li><span class="font-semibold">Diámetro de la perforación:</span> Varía entre AQ (27 mm) y PQ (85 mm), según las necesidades del estudio.</li>
+        <li><span class="font-semibold">Profundidad alcanzada:</span> Puede superar los 1.500 metros, ideal para estudios profundos de suelo y roca.</li>
+        <li><span class="font-semibold">Muestra extraída:</span> Núcleos cilíndricos intactos, preservando su composición original para análisis precisos.</li>
+        <li><span class="font-semibold">Tipo de perforadora:</span> Equipos hidráulicos y mecanizados de última generación, asegurando mayor eficiencia y seguridad.</li>
+        <li><span class="font-semibold">Velocidad de perforación:</span> Ajustable según la dureza del terreno, optimizando tiempos de trabajo.</li>
+      </ul>
+
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4">Beneficios de la perforación diamantina para tu proyecto</h2>
+      <ul class="space-y-3 mb-8 text-[#575756]">
+        <li><span class="font-semibold">✅ Máxima precisión en la extracción de muestras:</span> Sin alterar su estructura.</li>
+        <li><span class="font-semibold">✅ Mayor profundidad de perforación:</span> Ideal para estudios de geotecnia, minería y exploración de suelos.</li>
+        <li><span class="font-semibold">✅ Reducción de costos y riesgos:</span> Evitando fallas estructurales en proyectos de ingeniería civil.</li>
+        <li><span class="font-semibold">✅ Cumplimiento normativo:</span> Asegurando que el estudio geotécnico cumpla con los estándares de calidad.</li>
+        <li><span class="font-semibold">✅ Menor impacto ambiental:</span> Ya que el proceso es menos invasivo que otros métodos de perforación.</li>
+      </ul>
+        <h2 class="text-xl font-semibold text-[#A65317] mb-4">Confía en Geosys Spa para tus estudios geotécnicos</h2>
+        
+        En <span class="font-semibold text-[#A65317]">Geosys Spa</span> somos expertos en <span class="font-semibold text-[#A65317]">perforación diamantina</span>, proporcionando análisis
+        detallados y soluciones personalizadas para cada proyecto. Nuestra tecnología avanzada y
+        equipo altamente calificado garantizan resultados confiables y eficientes.<br><br>
+
+      <p class="text-lg font-semibold text-[#A65317] text-center mb-8">¡Asegura el éxito de tu obra con estudios geotécnicos precisos! Contáctanos hoy y obtén información detallada del subsuelo para una construcción segura y eficiente.</p>
+    `,
+  },
+  {
+    titulo: "¿Qué es la prueba de penetración estándar (SPT) y cómo funciona?",
+    imagen: blog4,
+    alt: "Prueba de penetración estándar (SPT)",
+    contenido: `
+      El <span class="font-semibold text-[#A65317]">SPT</span> es un método de exploración geotécnica que determina la resistencia del suelo mediante la penetración de un <span class="font-semibold text-[#A65317]">barril de muestreo estándar</span> en el terreno.
+      La <span class="font-semibold text-[#A65317]">Prueba de Penetración Estándar (SPT)</span> es la solución ideal. Este ensayo geotécnico
+      evalúa la resistencia del terreno a través de mediciones precisas, garantizando información
+      confiable para fundaciones seguras en <span class="font-semibold text-[#A65317]">proyectos de construcción, ingeniería civil y
+      geotecnia.</span>
+
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4 mt-8">Especificaciones Técnicas del Proceso</h2>
+      <ul class="list-disc pl-6 mb-8 text-[#575756] space-y-3">
+        <li><span class="font-semibold">Procedimiento:</span> Se deja caer un martillo de 63.5 kg desde una altura de 76 cm sobre un barril de muestreo estándar, registrando el número de golpes necesarios para que penetre 30 cm en el suelo.</li>
+        <li><span class="font-semibold">Equipamiento utilizado:</span> Perforadora geotécnica con sistema SPT automático para garantizar precisión en la medición.</li>
+        <li><span class="font-semibold">Parámetro clave:</span> El índice de resistencia SPT, que permite clasificar la consistencia del suelo y su capacidad de carga.</li>
+        <li><span class="font-semibold">Profundidad de prueba:</span> Se puede realizar a diferentes niveles según los requerimientos del proyecto.</li>
+        <li><span class="font-semibold">Resultados obtenidos:</span> Se analizan la compacidad y densidad del suelo, detectando posibles zonas de colapso o asentamientos diferenciales.</li>
+      </ul>
+
+      <h2 class="text-xl font-semibold text-[#A65317] mb-4">Beneficios de la prueba de penetración estándar (SPT) para tu proyecto</h2>
+      <ul class="space-y-3 mb-8 text-[#575756]">
+        <li><span class="font-semibold">✅ Seguridad estructural garantizada:</span> Previniendo fallas y asentamientos en las fundaciones.</li>
+        <li><span class="font-semibold">✅ Evaluación precisa del terreno:</span> Obteniendo datos confiables sobre la resistencia del suelo.</li>
+        <li><span class="font-semibold">✅ Cumplimiento de normativas:</span> Asegurando la viabilidad técnica de la obra según regulaciones geotécnicas.</li>
+        <li><span class="font-semibold">✅ Optimización de costos:</span> Evitando gastos imprevistos por refuerzos o correcciones en cimentaciones.</li>
+        <li><span class="font-semibold">✅ Mayor eficiencia en el diseño de estructuras:</span> Permitiendo adaptaciones según la capacidad del suelo.</li>
+      </ul>
+        <h2 class="text-xl font-semibold text-[#A65317] mb-4">Confía en Geosys Spa para Estudios de SPT Confiables</h2>
+
+        En <span class="font-semibold text-[#A65317]">Geosys Spa</span>, realizamos <span class="font-semibold text-[#A65317]">Pruebas de Penetración Estándar (SPT)</span> con equipos de
+        última tecnología y personal altamente capacitado. Garantizamos <span class="font-semibold text-[#A65317]">resultados precisos y
+        soluciones óptimas</span><br><br>
+
+      <p class="text-lg font-semibold text-[#A65317] text-center mb-8">¡No dejes la estabilidad de tu obra al azar! Contáctanos hoy y asegura el éxito de tu proyecto con estudios geotécnicos de calidad.</p>
+    `,
+  },
+];
+---
+
+<MainBlog>
+  {
+    secciones.map((seccion, index) => (
+      <>
+        <SectionTitle sectionTitle={seccion.titulo} id={`section-${index}`} />
+        <Image
+          src={seccion.imagen}
+          class="block mx-auto w-auto h-48 sm:h-64 md:h-80 rounded-2xl shadow-lg"
+          alt={seccion.alt}
+        />
+        <Section>
+          <div
+            class="mb-4 text-lg font-normal text-[#575756] text-justify max-w-6xl mx-auto px-2 md:px-8 lg:px-8 mt-[50px]"
+            set:html={seccion.contenido}
+          />
+        </Section>
+      </>
+    ))
+  }
+</MainBlog>

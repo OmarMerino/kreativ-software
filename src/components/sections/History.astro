@@ -4,7 +4,7 @@ import SectionTitle from "../ui/SectionTitle.astro";
 import Card from "../ui/Card.astro";
 import mision from "../../assets/icons/mision.png";
 import vision from "../../assets/icons/vision.png";
-import valores from "../../assets/icons/valores.png"
+import valores from "../../assets/icons/valores.png";
 import { Image } from "astro:assets";
 ---
 
@@ -13,8 +13,15 @@ import { Image } from "astro:assets";
 <Section id="">
   <div class="container mx-auto text-start">
     <p class="mb-4 text-base font-normal text-[#575756] text-justify">
-      En Geosys Spa, nuestra trayectoria está arraigada en la pasión por la
-      ingeniería civil y el compromiso con la excelencia geotécnica. Fundada por
+      En <span class="font-semibold text-[#A65317]">Geosys Spa</span>, nuestra
+      trayectoria está profundamente arraigada en la pasión por la <span
+        class="font-semibold text-[#A65317]"
+        >ingeniería civil y el compromiso con la excelencia geotécnica</span
+      > y nació de la solicitud constante de nuestros clientes de una destacada experiencia
+      en ingeniería estructural, geofísica y geotécnica
+      <br />
+
+      Fundada por dos visionarios
       <span class="font-semibold text-[#A65317]">Enrique Sepúlveda Bornand</span
       > y
       <span class="font-semibold text-[#A65317]">Paulo Sepúlveda Aravena</span>.
@@ -32,8 +39,7 @@ import { Image } from "astro:assets";
         <p class="mb-4 text-base font-normal text-[#575756]">
           Enrique, ingeniero civil con más de 20 años de experiencia, y Paulo,
           laboratorista vial con 30 años en laboratorios de suelos, unieron sus
-          conocimientos en estructuras y prospección geofísica aplicada a la
-          construcción de infraestructuras.
+          conocimientos para brindar servicios de excelencia y calidad.
         </p>
       </li>
       <li class="mb-10 ms-4">
@@ -45,9 +51,11 @@ import { Image } from "astro:assets";
           Expansión
         </time>
         <p class="text-base font-normal text-[#575756]">
-          Innovamos en sondajes y perforaciones geotécnicas, expandiendo nuestra
-          presencia al centro-sur de Chile y liderando el sector con tecnologías
-          avanzadas y prácticas sostenibles.
+          Innovamos en sondajes y perforaciones geotécnicas para la construcción
+          de infraestructuras en la <span class="font-semibold text-[#A65317]"
+            >Región de Ñuble</span
+          > expandiendo nuestra presencia al Centro-Sur de Chile y liderando el sector
+          con tecnologías avanzadas.
         </p>
       </li>
       <li class="ms-4">
@@ -67,7 +75,6 @@ import { Image } from "astro:assets";
     </ol>
   </div>
 
-  
   <div class="mt-[100px] grid grid-cols-1 md:grid-cols-3 gap-8">
     <section id="card1" class="card">
       <div class="flex flex-col items-center gap-x-4">
@@ -83,7 +90,7 @@ import { Image } from "astro:assets";
         </p>
       </div>
     </section>
-    
+
     <section id="card2" class="card">
       <div class="flex-col items-center gap-x-4">
         <Image src={vision} class="h-48 w-auto" alt="Ícono de Visión" />
@@ -91,31 +98,29 @@ import { Image } from "astro:assets";
       </div>
       <div class="card__content">
         <p class="text-white text-justify text-lg">
-          Aspiramos a expandir nuestra influencia más allá de Ñuble, abarcando el
-          centro-sur de Chile. Nos proyectamos como pioneros en la incorporación de
-          tecnologías avanzadas y métodos sostenibles que minimizan el impacto
-          ambiental mientras optimizamos la eficiencia operativa.
+          Aspiramos a expandir nuestra influencia más allá de Ñuble, abarcando
+          el centro-sur de Chile. Nos proyectamos como pioneros en la
+          incorporación de tecnologías avanzadas y métodos sostenibles que
+          minimizan el impacto ambiental mientras optimizamos la eficiencia
+          operativa.
         </p>
       </div>
     </section>
-    
+
     <section id="card3" class="card">
       <div class="flex-col items-center gap-x-4">
         <Image src={valores} class="h-48 w-auto" alt="Ícono de Valores" />
         <h2 class="text-[1.75rem] text-white text-center font-bold">Valores</h2>
       </div>
       <div class="card__content">
-        <p class="mt-4 text-white text-justify ">
-          Confianza, Profesionalismo y Ética. En Geosys Spa la confianza es nuestra
-          base, garantizada a través de un profesionalismo inquebrantable y una
-          ética rigurosa. Nos comprometemos a proporcionar perforaciones
-          geotécnicas precisas, cumpliendo con los más altos estándares de
-          integridad en cada proyecto.
+        <p class="mt-4 text-white text-justify">
+          En Geosys Spa la confianza es nuestra base, garantizada a través de un
+          profesionalismo inquebrantable y una ética rigurosa. Nos comprometemos
+          a proporcionar perforaciones geotécnicas precisas, cumpliendo con los
+          más altos estándares de integridad en cada proyecto.
         </p>
       </div>
     </section>
-    
-    
   </div>
 </Section>
 
@@ -125,7 +130,7 @@ import { Image } from "astro:assets";
     position: relative;
     width: 325px;
     height: 350px;
-    background-color: #A65317;
+    background-color: #a65317;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -142,8 +147,8 @@ import { Image } from "astro:assets";
   }
   .card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px #B2B2B2;
-    background-color: #D36C16;
+    box-shadow: 0 8px 16px #b2b2b2;
+    background-color: #d36c16;
     color: #ffffff;
   }
 
@@ -155,7 +160,7 @@ import { Image } from "astro:assets";
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #D36C16;
+    background-color: #d36c16;
     transform: rotateX(-90deg);
     transform-origin: bottom;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
